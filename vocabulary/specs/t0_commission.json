@@ -1,0 +1,64 @@
+{
+  "name": "t0_commission_spec",
+  "description": "t0 commission declared as a spec: on which date is the broker taken, and how is the commission rounded?",
+  "target": {
+    "file": "t0_commission",
+    "keys": [
+      "policy_id",
+      "due_nr"
+    ],
+    "value": "amount",
+    "type": "decimal"
+  },
+  "rows": {
+    "from": "NRPREM",
+    "where": "PR_STATE == 'P'",
+    "key": [
+      "PR_POLNR",
+      "int(PR_DUENR)"
+    ],
+    "join": [
+      {
+        "table": "NRRISK",
+        "on": {
+          "RK_POLNR": "PR_POLNR"
+        },
+        "where": "RK_RSKNR == '1'"
+      },
+      {
+        "table": "NRPOLH",
+        "on": {
+          "PH_POLNR": "PR_POLNR"
+        },
+        "as_of": "hole:broker taken on"
+      },
+      {
+        "table": "NRBROK",
+        "on": {
+          "BR_BRKNR": "PH_BRKNR"
+        }
+      },
+      {
+        "table": "NRCOMR",
+        "on": {
+          "CR_TIER": "BR_TIER",
+          "CR_PAYTP": "RK_TARKEY[5]"
+        },
+        "as_of": "hole:broker taken on"
+      }
+    ]
+  },
+  "holes": {
+    "broker taken on": {
+      "due date": "date(PR_DUEDT)",
+      "money date": "date(PR_RCVDT)"
+    },
+    "rounding": "ROUNDINGS"
+  },
+  "formula": "rounding(num(PR_AMTRC, 2) * num(CR_RATE, 6), date(PR_RCVDT))",
+  "features": {
+    "premium type": "RK_TARKEY[5]",
+    "broker tier": "BR_TIER"
+  },
+  "nrexcp": "t0_commission"
+}

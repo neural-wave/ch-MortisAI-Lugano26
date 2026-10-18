@@ -1,0 +1,632 @@
+{
+ "about": "Leaderboard evidence for t7 (Nazar uploads). Same sample = the same rows of the hidden targets; a higher score on the same sample is better. A diagnostic build answers one group only: missing rows count as wrong, extra rows are ignored (scoring_t7.accuracy). \"switches\" lists every t7 choice of a build by its hole and option (vocabulary/cases/t7_tax.py); payout and annual are [right, scored], null before the score arrives.",
+ "samples": {
+  "A": {
+   "payout_rows": 20,
+   "annual_rows": 20,
+   "used_by": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  "B": {
+   "payout_rows": 40,
+   "annual_rows": 30,
+   "used_by": [
+    4,
+    5
+   ]
+  },
+  "C": {
+   "payout_rows": 40,
+   "annual_rows": 30,
+   "used_by": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "note": "the third sample, scored after the first two were released (targets_t7/sample_1 = A, sample_2 = B)"
+  }
+ },
+ "submissions": [
+  {
+   "n": 0,
+   "build": "team03-submission-22",
+   "sample": "A",
+   "payout": [
+    1,
+    20
+   ],
+   "annual": [
+    15,
+    20
+   ],
+   "switches": {
+    "payout amount": "gross",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "exact",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "none",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "none",
+    "no remittance": "None",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 1,
+   "build": "dist/t7-send-1.zip",
+   "commit": "fb1b00e",
+   "sample": "A",
+   "payout": [
+    1,
+    20
+   ],
+   "annual": [
+    15,
+    20
+   ],
+   "changes": {
+    "T7_CH_UNTAXED_BASE": "zero",
+    "T7_REPORTED_VST": "in the years without a row"
+   },
+   "switches": {
+    "payout amount": "gross",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "exact",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "zero",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "none",
+    "no remittance": "None",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 2,
+   "build": "dist/t7-send-2-57.zip (uploaded as t7-send-2-main)",
+   "commit": "723e53f",
+   "sample": "A",
+   "payout": [
+    11,
+    20
+   ],
+   "annual": [
+    15,
+    20
+   ],
+   "changes": {
+    "T7_NO_REMITTANCE": "an empty text",
+    "T7_CH_UNTAXED_BASE": "the payout in CHF"
+   },
+   "switches": {
+    "payout amount": "gross",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "exact",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "none",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 3,
+   "build": "dist/t7-send-3.zip",
+   "commit": "5fe65d1",
+   "sample": "A",
+   "payout": [
+    13,
+    20
+   ],
+   "annual": [
+    14,
+    20
+   ],
+   "changes": {
+    "T7_PAYOUT_AMOUNT": "after the surrender penalty",
+    "T7_BASIS_SHARE": "to the cent",
+    "T7_BOL_VALUE": "surrender value",
+    "T7_REMITTANCE_SHIFT": "next business day (Ticino)"
+   },
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day (Ticino)",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "surrender value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 4,
+   "build": "dist/t7-send-4.zip",
+   "commit": "5d50269",
+   "tag": "best-send4",
+   "sample": "B",
+   "payout": [
+    26,
+    40
+   ],
+   "annual": [
+    10,
+    30
+   ],
+   "changes": {
+    "T7_BOL_VALUE": "policy value",
+    "T7_LOSS_BASE": "the signed gain in Italy and Germany",
+    "T7_BOL_FIRST_YEAR": "from the start"
+   },
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "the signed gain in Italy and Germany",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "from the start",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day (Ticino)",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 5,
+   "build": "dist/t7-send-5-diag.zip",
+   "commit": "4c7c09c",
+   "sample": "B",
+   "diagnostic": true,
+   "payout_group": "rows with an amount withheld, surcharged or collected",
+   "payout_group_right": 3,
+   "annual_group": "stamp duty alone, no payout in the year",
+   "annual_group_right": 2,
+   "derived": {
+    "payout_untaxed_right": 23,
+    "annual_other_groups_right": 8
+   },
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "the signed gain in Italy and Germany",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "from the start",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day (Ticino)",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 6,
+   "build": "dist/t7-send-6.zip",
+   "commit": "27d7409",
+   "sample": "B",
+   "payout": [
+    24,
+    40
+   ],
+   "annual": [
+    12,
+    30
+   ],
+   "changes": {
+    "T7_REMITTANCE": "the 10th of the next month for every country",
+    "T7_BOL_FIRST_YEAR": "in full"
+   },
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "the signed gain in Italy and Germany",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 10th of the next month",
+     "CH": "the 10th of the next month",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day (Ticino)",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 7,
+   "build": "dist/t7-send-7.zip",
+   "commit": "d7f2dc5",
+   "tag": "best-send7",
+   "sample": "B",
+   "payout": null,
+   "annual": null,
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "the signed gain in Italy and Germany",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day (Ticino)",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 8,
+   "build": "dist/t7-send-8-diag.zip",
+   "commit": "65091f0",
+   "sample": "B",
+   "diagnostic": true,
+   "payout_group": "untaxed rows and Swiss taxed rows",
+   "annual_group": "years with a payout",
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the DTH booking",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "the signed gain in Italy and Germany",
+    "stamp duty alone": "dated",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "rounding day": "the processing day",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day (Ticino)",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved"
+   }
+  },
+  {
+   "n": 9,
+   "build": "dist/t7-send-9.zip",
+   "commit": "36e1bb3",
+   "sample": "C",
+   "payout": [
+    38,
+    40
+   ],
+   "annual": [
+    27,
+    30
+   ],
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the death benefit",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "no date",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day of the tax office",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "none",
+    "exemption": "none",
+    "Italian substitute tax": "each rate on the gain of its period",
+    "earlier withdrawals in the periods": "open premiums, the share left",
+    "year in the yearly table": "the remittance year",
+    "stamp duty at a payout": "before the penalty",
+    "German surcharges": "cut to the cent",
+    "premium rounding": "on the premium day",
+    "the 2019 correction": "the rate raise, rounded once"
+   },
+   "changes": {
+    "all T7_*": "as the team's build 57 (110/110 on samples A and B)"
+   },
+   "note": "the score of send-10 is reported as unchanged against send-9"
+  },
+  {
+   "n": 10,
+   "build": "dist/t7-send-10.zip",
+   "commit": "36e1bb3",
+   "sample": "C",
+   "payout": [
+    38,
+    40
+   ],
+   "annual": [
+    27,
+    30
+   ],
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the death benefit",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "no date",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day of the tax office",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "halved",
+    "exemption": "none",
+    "Italian substitute tax": "each rate on the gain of its period",
+    "earlier withdrawals in the periods": "open premiums, the share left",
+    "year in the yearly table": "the remittance year",
+    "stamp duty at a payout": "before the penalty",
+    "German surcharges": "cut to the cent",
+    "premium rounding": "on the premium day",
+    "the 2019 correction": "the rate raise, rounded once"
+   },
+   "changes": {
+    "T7_TFS_WITH_HEV": "halved"
+   },
+   "note": "a tie on the samples, the leaderboard did not tell them apart (send-10 = send-9): sample C has no HEV row"
+  },
+  {
+   "n": 11,
+   "build": "dist/t7-send-11.zip",
+   "sample": "C",
+   "payout": [
+    38,
+    40
+   ],
+   "annual": [
+    27,
+    30
+   ],
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the death benefit",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "no date",
+    "stamp duty first year": "in full",
+    "presence": "by the rules found",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "in the years without a row",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day of the tax office",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "none",
+    "exemption": "none",
+    "Italian substitute tax": "each rate on the gain of its period",
+    "earlier withdrawals in the periods": "open premiums, the share left",
+    "year in the yearly table": "the remittance year",
+    "stamp duty at a payout": "before the penalty",
+    "German surcharges": "cut to the cent",
+    "premium rounding": "on the premium day",
+    "the 2019 correction": "the rate raise, rounded once"
+   },
+   "changes": {
+    "T7_PRESENCE": "by the rules found"
+   },
+   "note": "unchanged against send-9: sample C has none of the 3 German rows; presence stays as booked in NRTAXB"
+  },
+  {
+   "n": 12,
+   "build": "dist/t7-send-12.zip",
+   "sample": "C",
+   "payout": null,
+   "annual": null,
+   "diagnostic": true,
+   "switches": {
+    "payout amount": "after the surrender penalty",
+    "death claim amount": "the death benefit",
+    "premium amount": "received (PR_AMTRC)",
+    "paid back share": "to the cent",
+    "base of a loss": "zero for a loss",
+    "stamp duty alone": "no date",
+    "stamp duty first year": "in full",
+    "presence": "as booked in NRTAXB",
+    "residence known": "as known when processed",
+    "rate known": "as known when processed",
+    "untaxed Swiss base": "the payout in CHF",
+    "reported withholding": "none",
+    "remittance": {
+     "DE": "the 10th of the next month",
+     "IT": "the 16th of the next month",
+     "CH": "30 days after the month end",
+     "LU": "the 10th of the next month"
+    },
+    "remittance shift": "next business day of the tax office",
+    "no remittance": "an empty text",
+    "stamp duty share": "days of the year",
+    "stamp duty value": "policy value",
+    "stamp duty collected": "the withdrawn share",
+    "church tax": "lowered by the church tax",
+    "exemption with half income": "none",
+    "exemption": "none",
+    "Italian substitute tax": "each rate on the gain of its period",
+    "earlier withdrawals in the periods": "open premiums, the share left",
+    "year in the yearly table": "the remittance year",
+    "stamp duty at a payout": "before the penalty",
+    "German surcharges": "cut to the cent",
+    "premium rounding": "on the premium day",
+    "the 2019 correction": "the rate raise, rounded once"
+   },
+   "changes": {
+    "T7_REPORTED_VST": "none (rows only disappear)"
+   }
+  }
+ ]
+}

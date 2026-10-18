@@ -1,0 +1,24 @@
+{
+  "name": "t0_without_rate_table",
+  "description": "t0 commission WITHOUT the rate table NRCOMR: the rate is an unknown constant fitted from the data. The tree has to find on its own that the rate depends on broker tier and premium type, and the fit recovers each rate of the table (30 % of the policies).",
+  "target": {"file": "t0_commission", "keys": ["policy_id", "due_nr"], "value": "amount", "type": "decimal"},
+  "nrexcp": "t0_commission",
+  "sample": 30,
+  "depth": 3,
+  "rows": {
+    "from": "NRPREM",
+    "where": "PR_STATE == 'P'",
+    "key": ["PR_POLNR", "int(PR_DUENR)"],
+    "join": [
+      {"table": "NRRISK", "on": {"RK_POLNR": "PR_POLNR"}, "where": "RK_RSKNR == '1'"},
+      {"table": "NRPOLH", "on": {"PH_POLNR": "PR_POLNR"}, "as_of": "date(PR_RCVDT)"},
+      {"table": "NRBROK", "on": {"BR_BRKNR": "PH_BRKNR"}}
+    ]
+  },
+  "holes": {
+    "rate": {"fit": "ratio", "of": "num(PR_AMTRC, 2)"},
+    "rounding": "ROUNDINGS"
+  },
+  "formula": "rounding(num(PR_AMTRC, 2) * rate, date(PR_RCVDT))",
+  "features": {"broker tier": "BR_TIER", "premium type": "RK_TARKEY[5]", "product": "PH_PRDCD"}
+}

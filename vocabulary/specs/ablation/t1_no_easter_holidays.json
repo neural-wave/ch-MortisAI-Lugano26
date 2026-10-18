@@ -1,0 +1,47 @@
+{
+  "name": "ablation_t1_no_easter_holidays",
+  "description": "Ablation: t1 with the Easter holidays removed from the dictionary. The engine should find the rest of the rule and leave over exactly the due dates near Easter, with a prompt that shows them, for a person or an LLM to add the missing brick.",
+  "target": {
+    "file": "t1_next_due_dates",
+    "keys": [
+      "policy_id",
+      "n"
+    ],
+    "value": "collection_date",
+    "type": "date"
+  },
+  "rows": {
+    "from": "target:t1_next_due_dates",
+    "key": [
+      "policy_id",
+      "n"
+    ],
+    "join": [
+      {
+        "table": "NRPOLH",
+        "on": {
+          "PH_POLNR": "policy_id"
+        },
+        "as_of": "date(1260630)"
+      }
+    ]
+  },
+  "holes": {
+    "collection": {
+      "family": "SHIFTS",
+      "only": [
+        "same day",
+        "next weekday",
+        "next business day (Swiss federal)",
+        "next business day (Ticino, fixed only)",
+        "previous business day (Ticino)"
+      ]
+    }
+  },
+  "formula": "collection(iso(due_date))",
+  "features": {
+    "payment method": "PH_PAYMT",
+    "frequency": "PH_FREQ",
+    "due date": "iso(due_date)"
+  }
+}

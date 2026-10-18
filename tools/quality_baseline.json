@@ -1,0 +1,106 @@
+{
+ "tasks": {
+  "t0_commission": {
+   "correct": 225848,
+   "total": 225858,
+   "seconds": 2.5
+  },
+  "t1_next_due_dates": {
+   "correct": 15028,
+   "total": 15028,
+   "seconds": 0.1
+  },
+  "t2_projected_maturity_value": {
+   "correct": 3011,
+   "total": 3019,
+   "seconds": 3.7
+  },
+  "t3_surrender_value": {
+   "correct": 6137,
+   "total": 6153,
+   "seconds": 30.1
+  },
+  "t4_annual_statement": {
+   "correct": 34121,
+   "total": 34145,
+   "seconds": 0.3
+  }
+ },
+ "t5": {
+  "count": 55,
+  "seconds": 2.2,
+  "per_task": {
+   "t4_annual_statement": 21,
+   "t0_commission": 10,
+   "t2_projected_maturity_value": 8,
+   "t3_surrender_value": 16
+  }
+ },
+ "mi": 89.2,
+ "mi_files": {
+  "accounts.py": 89.4,
+  "accounts_replay.py": 98.9,
+  "accounts_surrender.py": 88.5,
+  "accounts_tables.py": 96.9,
+  "charges.py": 89.6,
+  "charges_management.py": 88.8,
+  "charges_risk.py": 89.4,
+  "charges_split.py": 95.6,
+  "commission.py": 96.3,
+  "commission_rates.py": 99.8,
+  "dates.py": 93.8,
+  "dates_easter.py": 88.7,
+  "dates_holidays.py": 89.3,
+  "dates_years.py": 88.0,
+  "eras.py": 89.1,
+  "ledger.py": 100.0,
+  "ledger_dates.py": 88.9,
+  "ledger_premium.py": 88.4,
+  "ledger_rates.py": 97.5,
+  "ledger_run.py": 89.4,
+  "ledger_terms.py": 91.5,
+  "ledger_units.py": 89.9,
+  "ledger_value.py": 85.2,
+  "market.py": 92.0,
+  "market_fx.py": 88.4,
+  "market_prices.py": 89.1,
+  "market_rates.py": 88.7,
+  "orders.py": 93.8,
+  "outliers.py": 91.2,
+  "outliers_compare.py": 94.1,
+  "outliers_predict.py": 100.0,
+  "outliers_targets.py": 90.3,
+  "projection.py": 100.0,
+  "projection_charges.py": 91.6,
+  "projection_month.py": 90.4,
+  "projection_offer.py": 100.0,
+  "projection_rates.py": 89.9,
+  "schedule.py": 98.7,
+  "schedule_cycle.py": 90.9,
+  "schedule_rules.py": 90.6,
+  "submission.py": 100.0,
+  "tables.py": 100.0,
+  "tables_formats.py": 88.5,
+  "tables_grouped.py": 100.0,
+  "tables_numbers.py": 100.0,
+  "tables_premium.py": 90.2,
+  "tables_read.py": 88.8,
+  "tables_versions.py": 93.8,
+  "tariff.py": 94.4,
+  "tariff_benefit.py": 99.3,
+  "tariff_rates.py": 93.6,
+  "tariff_risk.py": 89.8
+ },
+ "wall_seconds": 41.0,
+ "task_seconds": 38.9,
+ "self_tests": {
+  "ok": true,
+  "summary": "all self-tests passed"
+ },
+ "purity": [],
+ "commit": "390baaa",
+ "label": "baseline-handwritten (teammate's solution as received)",
+ "when": "2026-10-17T04:26:01",
+ "python": "3.14.4",
+ "mi_note": "lowered from 92.8 on 2026-10-17 by decision of Nazar: the leaderboard accepts at most 100 files, so the small modules (137 files, MI 93.2) were merged within their themes into 95 files (MI 89.2)"
+}

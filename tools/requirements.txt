@@ -1,0 +1,5 @@
+# Tools outside the solution: the figures of t6 (tools/figures.py) and reading the task PDF.
+# my_solution itself needs the standard library only (my_solution/requirements.txt).
+#   .venv/bin/pip install -r tools/requirements.txt
+matplotlib==3.11.2
+pypdf==6.21.1

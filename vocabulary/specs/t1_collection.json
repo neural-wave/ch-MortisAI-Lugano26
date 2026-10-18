@@ -1,0 +1,13 @@
+{
+  "name": "t1_collection_spec",
+  "description": "t1 collection date declared as a spec: how is a due date moved to the day the money is collected?",
+  "target": {"file": "t1_next_due_dates", "keys": ["policy_id", "n"], "value": "collection_date", "type": "date"},
+  "rows": {
+    "from": "target:t1_next_due_dates",
+    "key": ["policy_id", "n"],
+    "join": [{"table": "NRPOLH", "on": {"PH_POLNR": "policy_id"}, "as_of": "date(1260630)"}]
+  },
+  "holes": {"collection": "SHIFTS"},
+  "formula": "collection(iso(due_date))",
+  "features": {"payment method": "PH_PAYMT", "frequency": "PH_FREQ"}
+}

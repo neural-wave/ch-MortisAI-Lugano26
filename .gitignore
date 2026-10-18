@@ -1,0 +1,23 @@
+# data (never commit): the Neuron export and the train targets
+legacy/
+targets/
+targets_t7/
+# secrets and local environment
+.env
+.venv/
+# caches and editor files
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.idea/
+.vscode/
+# raw outputs and the history of the quality gate
+logs/*.txt
+logs/quality.jsonl
+# the cache of autosolve --verify --cached (fingerprint of the inputs of the last search)
+.cache/
+vocabulary/results*/outliers.csv
+docs/*.pdf
+dist/
+stand_runs/

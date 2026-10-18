@@ -1,0 +1,22 @@
+[
+ {
+  "case": "ablation_era_age",
+  "hole": "entry age",
+  "tag": "proposed: days since birth / 365, rounded to nearest whole year (COBOL era) (answer 1)",
+  "source": "def brick(birth_date, entry_date):\n    # name: days since birth / 365, rounded to nearest whole year (COBOL era)\n    days = (entry_date - birth_date).days\n    return int((D(days) / D(365)).quantize(D('1'), rounding=ROUND_HALF_UP))\n",
+  "extends": "conventions_age.days_36525",
+  "model": "Qwen/Qwen3.8-27B",
+  "effect": "exact rows (search, held out) (2399, 603) -> (2412, 607)",
+  "date": "2026-10-17"
+ },
+ {
+  "case": "ablation_t1_no_easter_holidays",
+  "hole": "collection",
+  "tag": "proposed: brick 1 (answer 1) (extends: next business day (Ticino, fixed only))",
+  "source": "def brick(d):\n    # next business day (Ticino, fixed + Easter-derived movable holidays)\n    def _easter_sunday(year):\n        a = year % 19\n        b = year // 100\n        c = year % 100\n        dd = b // 4\n        e = b % 4\n        f = (b + 8) // 25\n        g = (b - f + 1) // 3\n        h = (19 * a + b - dd - g + 15) % 30\n        i = c // 4\n        k = c % 4\n        l = (32 + 2 * e + 2 * i - h - k) % 7\n        m = (a + 11 * h + 22 * l) // 451\n        month = (h + l - 7 * m + 114) // 31\n        day = ((h + l - 7 * m + 114) % 31) + 1\n        return dt.date(year, month, day)\n\n    def _movable(year):\n        es = _easter_sunday(year)\n        return {\n            es + dt.timedelta(days=1),    # Easter Monday\n            es + dt.timedelta(days=39),   # Ascension\n            es + dt.timedelta(days=50),   # Whit Monday\n            es + dt.timedelta(days=60),   # Corpus Christi\n        }\n\n    holidays = set()\n    for y in (d.year - 1, d.year, d.year + 1):\n        holidays |= _movable(y)\n\n    result = best(d)\n    while result in holidays:\n        result = best(result + dt.timedelta(days=1))\n    return result\n",
+  "extends": "conventions_calendar.next_business_day_ticino_fixed",
+  "model": "Qwen/Qwen3.8-27B",
+  "effect": "exact rows (search, held out) (12143, 2829) -> (12183, 2845)",
+  "date": "2026-10-17"
+ }
+]
