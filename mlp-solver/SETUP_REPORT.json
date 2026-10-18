@@ -1,0 +1,103 @@
+{
+  "status": "ready",
+  "source_archive_contains_pretrained_weights": false,
+  "original_colab_weights_imported": false,
+  "submission_files_verified": 98,
+  "submission_changed": false,
+  "source_manifest_verified": true,
+  "source_checks": {
+    "status": "passed",
+    "oracle_checks": 60,
+    "matched_training_groups": 4,
+    "batch_single_equivalence": true,
+    "example_permutation_invariant": true,
+    "heuristic_matches_original_formula": true,
+    "batch512_feature_ms": [
+      25.0131250359118,
+      32.770999998319894,
+      28.086083009839058
+    ]
+  },
+  "financial_checker": "../starter_kit/check.py",
+  "financial_check_log": "runs/submission_check/check.log",
+  "t7_evaluated": false,
+  "smoke": {
+    "phase": "complete",
+    "status": "complete",
+    "seconds": 23.693948125001043,
+    "requested_tasks": 24,
+    "smoke_run": true,
+    "evaluation_run": true,
+    "utc": "2026-10-18T08:54:15.453393+00:00"
+  },
+  "smoke_models": {
+    "round1": {
+      "status": "trained",
+      "parameters": 10000000,
+      "exported_parameters": 10000000,
+      "epochs": 2,
+      "best": {
+        "epoch": 2,
+        "train_loss": 1.8911833763122559,
+        "validation_loss": 1.974064826965332,
+        "validation_top1": 0.3333333333333333,
+        "seconds": 0.05501920799724758
+      },
+      "seconds": 3.610335249977652,
+      "checkpoint_sha256": "65f0943f150c7021dfd78d4e423a8bdf062685fb2ece1f12957063bf87a30dd1",
+      "numpy_torch_parity": true,
+      "max_parity_error": 4.76837158203125e-07,
+      "gradient_evidence_saved": true,
+      "bytes": 36764359,
+      "sealed_test_read": false,
+      "device": "cpu"
+    },
+    "round2": {
+      "status": "trained",
+      "parameters": 10000000,
+      "exported_parameters": 10000000,
+      "epochs": 2,
+      "best": {
+        "epoch": 2,
+        "train_loss": 1.4865418672561646,
+        "validation_loss": 1.8191617727279663,
+        "validation_top1": 0.6666666666666666,
+        "seconds": 0.055037165991961956
+      },
+      "seconds": 3.107519624987617,
+      "checkpoint_sha256": "fc11bc88ddee9280a8cad992aee1dab97b93c2ea8f1df54ef727adc7feb5c227",
+      "numpy_torch_parity": true,
+      "max_parity_error": 1.1920928955078125e-06,
+      "gradient_evidence_saved": true,
+      "bytes": 36765523,
+      "sealed_test_read": false,
+      "device": "cpu"
+    },
+    "small": {
+      "status": "trained",
+      "parameters": 107074,
+      "exported_parameters": 107074,
+      "epochs": 2,
+      "best": {
+        "epoch": 2,
+        "train_loss": 2.0556938648223877,
+        "validation_loss": 2.0552191734313965,
+        "validation_top1": 0.6666666666666666,
+        "seconds": 0.0019536250038072467
+      },
+      "seconds": 0.04465470800641924,
+      "checkpoint_sha256": "e4c27d64b6d522330ae1e2c3edce7c23030d26371b884101928bfbf625664653",
+      "numpy_torch_parity": true,
+      "max_parity_error": 2.9802322387695312e-08,
+      "gradient_evidence_saved": true,
+      "bytes": 399420,
+      "sealed_test_read": false,
+      "device": "cpu"
+    }
+  },
+  "smoke_oracle_checks": 6144,
+  "smoke_model_quality_claim": false,
+  "example_formula": "rounded((amount * rate), when)",
+  "example_inference_ms": 2.3685008636675775,
+  "import_roundtrip_passed": true
+}
